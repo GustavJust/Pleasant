@@ -1,5 +1,6 @@
 ---
 import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
 ---
 
 <!doctype html>
@@ -15,21 +16,66 @@ import Header from "../components/header.astro";
     </header>
     <main>
       <section class="hero">
-        <div>
+        <div class="splash">
           <img src="/assets/imgs/pleasant_hero.svg" alt="hero img" />
         </div>
-        <div class="collage-container">
-          <!-- All your overlapping images go here -->
+        <nav class="global_nav">
+          <ul>
+            <li><a href="">HVORFOR PLEASANT?</a> &#10163;</li>
+            <li><a href="">STORIES</a> &#10163;</li>
+            <li><a href="">SHOP</a> &#10163;</li>
+          </ul>
+          <ul>
+            <li><a href="">FORHANDLERE</a> &#10163;</li>
+            <li><a href="">STYLEGUIDE</a> &#10163;</li>
+            <li><a href="">GENSALG</a> &#10163;</li>
+          </ul>
+        </nav>
+        <div class="collage">
+          <div class="collage-container">
+            <img src="/assets/imgs/Pleasant_pic_35.webp" alt="" class="hor" />
+            <img src="/assets/imgs/Pleasant_pic_43.webp" alt="" class="ver" />
+            <img src="/assets/imgs/Pleasant_pic_41.webp" alt="" class="ver" />
+            <img src="/assets/imgs/Pleasant_pic_32.webp" alt="" class="ver" />
+            <img src="/assets/imgs/Pleasant_pic_25.webp" alt="" class="hor" />
+            <img src="/assets/imgs/Pleasant_pic_15.webp" alt="" class="hor" />
+            <img src="/assets/imgs/Pleasant_pic_40.webp" alt="" class="hor" />
+            <img src="/assets/imgs/Pleasant_pic_27.webp" alt="" class="hor" />
+            <img src="/assets/imgs/Pleasant_pic_19.webp" alt="" class="rot" />
+            <img src="/assets/imgs/Pleasant_pic_36.webp" alt="" class="ver" />
+          </div>
+          <img
+            class="spinning-logo"
+            src="/assets/imgs/logo_black.svg"
+            alt="Logo"
+          />
         </div>
-        <img class="spinning-logo" src="/assets/logo.svg" alt="Logo" />
       </section>
       <section></section>
     </main>
-    <footer></footer>
+    <footer><Footer /></footer>
   </body>
 </html>
 
 <style>
+  a {
+    color: var(--links-color);
+  }
+  html {
+    --primary-font: "Courier New", Courier, monospace;
+    --secondary-font: "Courier New", Courier, regular;
+
+    --main-margin: 300px;
+    --section-margin: 100px;
+    --text-spacing: 1em;
+
+    --primary-color: #4a997c;
+    --secondary-color: white;
+    --links-color: #551a8b;
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
   body {
     background-image: url(/assets/imgs/wallpaper_logo.png);
     background-repeat: no-repeat;
@@ -41,5 +87,148 @@ import Header from "../components/header.astro";
     > div img {
       width: 100%;
     }
+  }
+  .splash {
+    /* padding-top: 40px; */
+    width: 100vw;
+    overflow: hidden;
+    transform: translateY(37px);
+  }
+  .global_nav {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+
+    > ul li {
+      font-family: var(--primary-font);
+      font-size: 20px;
+      list-style: none;
+    }
+    > ul li a:hover {
+      color: blue;
+    }
+    > ul:nth-child(2) {
+      text-align: right;
+      padding-right: 40px;
+    }
+  }
+  .collage {
+    perspective: 1000px;
+    position: relative;
+    height: fit-content;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    /* overflow: hidden; */
+    pointer-events: none;
+    user-select: none;
+    outline: none;
+  }
+  .collage-container {
+    transition: transform 0.15s ease-out;
+    transform-style: preserve-3d;
+    will-change: transform;
+    position: relative;
+    width: 100vw;
+    height: 80vh;
+    position: relative;
+    margin-bottom: 150px;
+    margin-top: -50px;
+    > img.ver {
+      max-width: 300px;
+      height: auto;
+      position: absolute;
+    }
+    > img.hor {
+      max-height: 300px;
+      width: auto;
+      position: absolute;
+    }
+    > img.rot {
+      transform: rotate(-90deg);
+      max-height: 300px;
+      width: auto;
+      position: absolute;
+    }
+  }
+  .spinning-logo {
+    width: 300px;
+    position: absolute;
+    animation: spinY 4s linear infinite;
+    transform-style: preserve-3d;
+    display: inline-block;
+    transform-origin: center center;
+    top: 40%;
+    filter: invert(1);
+  }
+  .collage-container img:nth-child(1) {
+    top: 10%;
+    left: 9%;
+    transform: scale(1);
+  }
+
+  .collage-container img:nth-child(2) {
+    top: 3%;
+    left: 45%;
+    transform: scale(1);
+    z-index: 10;
+  }
+
+  .collage-container img:nth-child(3) {
+    top: 11%;
+    left: 30%;
+    transform: scale(1.2);
+  }
+
+  .collage-container img:nth-child(4) {
+    top: 45%;
+    left: 3%;
+    transform: scale(1.2);
+    z-index: 0;
+  }
+
+  .collage-container img:nth-child(5) {
+    top: 71%;
+    left: 48%;
+    transform: scale(1.2);
+    z-index: 11;
+  }
+
+  .collage-container img:nth-child(6) {
+    top: 25%;
+    left: 60%;
+    transform: scale(1.4);
+  }
+
+  .collage-container img:nth-child(7) {
+    top: 50%;
+    left: 20%;
+    transform: scale(0.8);
+    z-index: 11;
+  }
+
+  .collage-container img:nth-child(8) {
+    top: 66%;
+    left: 74%;
+    transform: scale(0.82);
+    z-index: 11;
+  }
+
+  .collage-container img:nth-child(9) {
+    top: 69%;
+    left: 20%;
+    transform: scale(0.88) rotate(-90deg);
+    z-index: 11;
+  }
+
+  .collage-container img:nth-child(10) {
+    top: 28%;
+    left: 83%;
+    transform: scale(0.8);
   }
 </style>

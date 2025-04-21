@@ -1,0 +1,125 @@
+---
+
+---
+
+<div class="footer-container">
+  <div class="info">
+    <div>
+      <h2>Kontakt</h2>
+      <ul>
+        <li><a href="mailto:webshop@pleasant.dk">webshop@pleasant.dk</a></li>
+        <li>Svartid 1-2 hverdage</li>
+        <li>CVR-nr: 42943274</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Links</h2>
+      <ul>
+        <li>
+          <a href="/en/pages/storrelsesguide">Style guide</a> &#10163;
+        </li>
+
+        <li>
+          <a href="/en/pages/pleasant-community">Community</a> &#10163;
+        </li>
+
+        <li>
+          <a href="/en/pages/forhandlerliste">Forhandlere</a> &#10163;
+        </li>
+
+        <li>
+          <a href="/en/pages/kontakt">Kontakt</a> &#10163;
+        </li>
+
+        <li>
+          <a href="https://return.shipmondo.com/pleasant">Returportal</a> &#10163;
+        </li>
+
+        <li>
+          <a href="/en/pages/handelsbetingelser">Handelsbetingelser</a> &#10163;
+        </li>
+
+        <li>
+          <a href="/en/pages/privacy-policy">Privatlivspolitik (GDPR)</a> &#10163;
+        </li>
+      </ul>
+    </div>
+    <div class="newsletter">
+      <h2>Join our community</h2>
+      <input type="text" class="newsletter_input" placeholder="E-mail" />
+      <button>Subscribe</button>
+      <hr />
+      <div class="socials">
+        <a href="">instagram</a><a href="">facebook</a><a href="">Tiktok</a>
+      </div>
+    </div>
+  </div>
+  <p>
+    Pleasant er et tøjmærke, der upcycler og laver nyt tøj af brugt tekstil. God
+    stil. God samvittighed.
+  </p>
+  <img src="/assets/imgs/logo_black.svg" alt="logo" class="footer_logo" />
+  <p class="name">Pleasant</p>
+  <p>Copyright © 2025, Pleasant.</p>
+</div>
+
+<style>
+  div.footer-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    background-color: var(--primary-color);
+    justify-content: center;
+    align-items: center;
+    font-family: var(--primary-font);
+    > p {
+      max-width: 75ch;
+      font-weight: 600;
+      color: white;
+      margin: 1em 0 0 0;
+      text-align: center;
+    }
+    > p.name {
+      margin: 0;
+    }
+  }
+  .footer_logo {
+    filter: invert(1);
+    width: 100px;
+    justify-self: center;
+  }
+  h2 {
+    color: white;
+  }
+  .info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    > ul {
+      color: black;
+    }
+    > ul li {
+      list-style: none;
+    }
+    > ul li a {
+      color: var(--links-color);
+      list-style: none;
+    }
+  }
+  .newsletter_input {
+    font-family: var(--primary-font);
+    background-color: none;
+    color: black;
+    border: none;
+    width: 100%;
+  }
+  button {
+    margin: 1em 0;
+  }
+  .socials {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
