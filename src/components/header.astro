@@ -3,6 +3,9 @@
 ---
 
 <div class="header_container">
+  <div class="search">
+    <button class="search_button">&#9906;</button>
+  </div>
   <div class="logo">
     <a href="">
       <img src="./assets/imgs/logo_black.svg" alt="logo" />
@@ -64,6 +67,24 @@
     }
     to {
       transform: rotateY(360deg);
+    }
+  }
+  .search {
+    width: 0%;
+    display: flex;
+
+    > .search_button {
+      background-color: transparent;
+      border: none;
+      font-size: 2em;
+      transform: rotate(45deg);
+      margin: 0 0 0 30px;
+      padding: 0;
+      justify-content: center;
+      align-items: center;
+    }
+    > .search_button:hover {
+      cursor: pointer;
     }
   }
 </style>

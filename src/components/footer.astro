@@ -59,8 +59,7 @@
     stil. God samvittighed.
   </p>
   <img src="/assets/imgs/logo_black.svg" alt="logo" class="footer_logo" />
-  <p class="name">Pleasant</p>
-  <p>Copyright © 2025, Pleasant.</p>
+  <p class="copyright">Copyright © 2025, Pleasant.</p>
 </div>
 
 <style>
@@ -73,6 +72,18 @@
     justify-content: center;
     align-items: center;
     font-family: var(--primary-font);
+
+    background-color: #35916f;
+    opacity: 0.8;
+    background-image: repeating-radial-gradient(
+        circle at 0 0,
+        transparent 0,
+        #35916f 10px
+      ),
+      repeating-linear-gradient(#4a997c55, #4a997c);
+
+    padding-bottom: 1em;
+
     > p {
       max-width: 75ch;
       font-weight: 600;
@@ -114,12 +125,38 @@
     color: black;
     border: none;
     width: 100%;
+    height: 2em;
+    padding: 0 0.5em;
+  }
+  input:focus {
+    outline: 1px dotted white;
+    box-shadow: none;
   }
   button {
     margin: 1em 0;
+    background-color: black;
+    color: white;
+    padding: 0.5em 1em;
   }
+  button:hover {
+    background-color: gray;
+    border: 2px outset white;
+    cursor: pointer;
+  }
+
   .socials {
     display: flex;
     justify-content: space-between;
+  }
+  a {
+    color: var(--links-color);
+  }
+  a:hover {
+    color: blue;
+  }
+  .copyright {
+    font-size: 0.7em;
+    justify-self: right;
+    margin: 0 !important;
   }
 </style>
