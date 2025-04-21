@@ -51,7 +51,97 @@ import Footer from "../components/footer.astro";
           />
         </div>
       </section>
-      <section></section>
+      <section class="categories">
+        <div class="menu">
+          <div class="menu_row one">
+            <div class="menu_item_container one">
+              <a href="">
+                <img src="/assets/imgs/high_res/clothes.webp" alt="clothes" />
+                <h2 class="shadow">TØJ</h2>
+                <h2>TØJ</h2>
+              </a>
+            </div>
+            <div class="menu_item_container two">
+              <a href="">
+                <img
+                  src="/assets/imgs/high_res/accessories.webp"
+                  alt="Accessories"
+                />
+                <h2 class="shadow">ACCESSORIES</h2>
+                <h2>ACCESSORIES</h2>
+              </a>
+            </div>
+          </div>
+          <div class="menu_row two">
+            <div class="menu_item_container three">
+              <a href="">
+                <img
+                  src="/assets/imgs/high_res/lifestyle.webp"
+                  alt="lifestyle"
+                />
+                <h2 class="shadow">LIVSSTIL</h2>
+                <h2>LIVSSTIL</h2>
+              </a>
+            </div>
+            <div class="menu_item_container four">
+              <a href="">
+                <img
+                  src="/assets/imgs/high_res/shop_the_drop.webp"
+                  alt="Shop the drop"
+                />
+                <h2 class="shadow">SHOP THE DROP</h2>
+                <h2>SHOP THE DROP</h2>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="usp">
+          <div>
+            <img src="assets/imgs/thread.svg" alt="" />
+            <h3>Reparations events</h3>
+            <p>
+              Pleasant afholder repair events, hvor du kan du repareret dit tøj.
+              Vi vil gerne minde alle om, at tøj let kan repareres. Kræver en
+              reparation nyt stof medfølger der ekstra lapper indvendigt i vores
+              tøj.
+            </p>
+          </div>
+          <div>
+            <img src="assets/imgs/resale.svg" alt="" />
+            <h3>Gensalg</h3>
+            <p>
+              Har du Pleasant tøj, som du bruger for lidt, kan du returnere det
+              og spare op til 50% på dit næste look. Derefter gensælger vi dit
+              brugte tøj og giver det en ny chance. Formålet er at cirkulere
+              vores tøj mellem flere ejere så det bliver brugt mest muligt.
+            </p>
+          </div>
+          <div>
+            <img src="assets/imgs/shirts_recycle.svg" alt="" />
+            <h3>upcyclede materialer</h3>
+            <p>
+              Størstedelen af et stykke tøjs CO2 aftrykket ligger i
+              materialefremstillingen. Ved at anvende tekstil, der allerede
+              findes i forvejen rammer vi et CO2 aftryk, der sammenlignet med et
+              konventionelt produkt, er min. 4 gange så lavt. Dette er på trods
+              af, at vores varer skal fragtes både fra Danmark til vores
+              produktionslande og retur.
+            </p>
+          </div>
+          <div>
+            <img src="assets/imgs/floppy.svg" alt="" />
+            <h3>Tidsløse designs</h3>
+            <p>
+              For at tøj kan blive brugt skal det først sælges. Men det er langt
+              fra alt nyt tøj, der bliver solgt. Vi sælger Pleasant tøj uden
+              tidspres. Dermed undgår vi at overproducere kollektioner, og
+              brænde inde med forældede produkter.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
     <footer><Footer /></footer>
   </body>
@@ -66,12 +156,15 @@ import Footer from "../components/footer.astro";
     --secondary-font: "Courier New", Courier, regular;
 
     --main-margin: 300px;
-    --section-margin: 100px;
+    --section-spacing: 70px;
     --text-spacing: 1em;
 
     --primary-color: #4a997c;
     --secondary-color: white;
     --links-color: #551a8b;
+  }
+  :root {
+    font-family: var(--primary-font);
   }
   body::-webkit-scrollbar {
     display: none;
@@ -87,6 +180,9 @@ import Footer from "../components/footer.astro";
     > div img {
       width: 100%;
     }
+  }
+  section:not(.hero) {
+    margin-top: var(--section-spacing);
   }
   .splash {
     /* padding-top: 40px; */
@@ -230,5 +326,76 @@ import Footer from "../components/footer.astro";
     top: 28%;
     left: 83%;
     transform: scale(0.8);
+  }
+
+  .menu div.menu_row.one,
+  .menu div.menu_row.two {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5px;
+    margin: 0 5px 5px 5px;
+
+    > .menu_item_container.one a,
+    .menu_item_container.two a,
+    .menu_item_container.three a,
+    .menu_item_container.four a {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      height: 600px;
+      overflow: hidden;
+    }
+    > .menu_item_container.one a img,
+    .menu_item_container.two a img,
+    .menu_item_container.three a img,
+    .menu_item_container.four a img,
+    .menu_item_container.one a h2,
+    .menu_item_container.two a h2,
+    .menu_item_container.three a h2,
+    .menu_item_container.four a h2 {
+      grid-area: 1/1/2/2;
+      position: absolute;
+      object-fit: cover;
+      height: 100%;
+      color: white;
+      font-family: var(--primary-font);
+      font-size: 5vw;
+      transition: 0.3s ease-out;
+    }
+  }
+  .menu div.menu_row.two {
+    grid-template-columns: 2fr 1fr;
+  }
+  .menu_item_container a h2 {
+    left: 2%;
+  }
+  .shadow {
+    color: var(--primary-color) !important;
+    transform: translate(2%, 1%);
+  }
+
+  .menu_item_container:hover a img {
+    transform: scale(1.1);
+    filter: brightness(120%);
+  }
+  .usp {
+    display: flex;
+    justify-content: space-around;
+    > div {
+      display: flex;
+      flex-direction: column;
+      max-width: 360px;
+      subgrid:;
+      align-items: center;
+    }
+  }
+  .usp div img {
+    max-height: 200px;
+  }
+  .usp div h3,
+  .usp div p {
+    /* color: var(--primary-color); */
   }
 </style>

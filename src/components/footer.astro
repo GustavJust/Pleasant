@@ -83,12 +83,13 @@
       repeating-linear-gradient(#4a997c55, #4a997c);
 
     padding-bottom: 1em;
+    margin-top: var(--section-spacing);
 
     > p {
       max-width: 75ch;
       font-weight: 600;
       color: white;
-      margin: 1em 0 0 0;
+      margin: 2em 0 0 0;
       text-align: center;
     }
     > p.name {
@@ -96,6 +97,7 @@
     }
   }
   .footer_logo {
+    margin-top: 1em;
     filter: invert(1);
     width: 100px;
     justify-self: center;
@@ -108,14 +110,17 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    > ul {
-      color: black;
+    > div ul {
+      color: white;
+      padding: 0;
     }
-    > ul li {
+    > div ul li {
       list-style: none;
+      color: white;
+      margin: 0;
     }
     > ul li a {
-      color: var(--links-color);
+      color: white;
       list-style: none;
     }
   }
@@ -149,7 +154,7 @@
     justify-content: space-between;
   }
   a {
-    color: var(--links-color);
+    color: white;
   }
   a:hover {
     color: blue;
