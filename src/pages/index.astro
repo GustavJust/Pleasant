@@ -23,7 +23,7 @@ import Footer from "../components/footer.astro";
           <ul>
             <li><a href="">HVORFOR PLEASANT?</a> &#10163;</li>
             <li><a href="">STORIES</a> &#10163;</li>
-            <li><a href="">SHOP</a> &#10163;</li>
+            <li><a href="/src/pages/list_view.astro">SHOP</a> &#10163;</li>
           </ul>
           <ul>
             <li><a href="">FORHANDLERE</a> &#10163;</li>
@@ -51,6 +51,17 @@ import Footer from "../components/footer.astro";
           />
         </div>
       </section>
+      <div class="pleasant_text">
+        <p>Make life pleasant</p><p>Make life pleasant</p><p>
+          Make life pleasant
+        </p><p>Make life pleasant</p><p>Make life pleasant</p><p>
+          Make life pleasant
+        </p>
+        <p>Make life pleasant</p>
+        <p>Make life pleasant</p>
+        <p>Make life pleasant</p>
+        <p>Make life pleasant</p>
+      </div>
       <section class="categories">
         <div class="menu">
           <div class="menu_row one">
@@ -429,5 +440,15 @@ import Footer from "../components/footer.astro";
   a.knap.cta:hover {
     background-color: rgb(133, 203, 164);
     border: 2px outset rgb(112, 189, 136);
+  }
+  .pleasant_text {
+    display: flex;
+    gap: 2em;
+    flex-wrap: nowrap;
+    width: 100vw;
+    overflow: hidden;
+    > p {
+      text-wrap: nowrap;
+    }
   }
 </style>
