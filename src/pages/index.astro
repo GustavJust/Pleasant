@@ -141,6 +141,10 @@ import Footer from "../components/footer.astro";
             </p>
           </div>
         </div>
+        <div class="flex_center">
+          <a href="" class="knap">Læs mere</a>
+          <a href="" class="knap cta">Shop nu</a>
+        </div>
       </section>
     </main>
     <footer><Footer /></footer>
@@ -183,6 +187,12 @@ import Footer from "../components/footer.astro";
   }
   section:not(.hero) {
     margin-top: var(--section-spacing);
+  }
+  .flex_center {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
   }
   .splash {
     /* padding-top: 40px; */
@@ -397,5 +407,27 @@ import Footer from "../components/footer.astro";
   .usp div h3,
   .usp div p {
     /* color: var(--primary-color); */
+  }
+  a.knap {
+    justify-self: center;
+    margin: 1em 0;
+    background-color: black;
+    border: 2px outset rgb(27, 27, 27);
+    color: white;
+    padding: 0.5em 1em;
+    transition: 0.05s ease-in;
+  }
+  a.knap:hover {
+    background-color: gray;
+    border: 2px outset rgb(166, 166, 166);
+    cursor: pointer;
+  }
+  a.knap.cta {
+    background-color: var(--primary-color);
+    border: 2px outset green;
+  }
+  a.knap.cta:hover {
+    background-color: rgb(133, 203, 164);
+    border: 2px outset rgb(112, 189, 136);
   }
 </style>
