@@ -49,7 +49,7 @@ import Filters from "../components/filters.astro";
           <div class="shop_grid_container">
             <h2>TØJ</h2>
             <div class="shop_grid">
-              <div class="card">
+              <a href="/list" class="card">
                 <span class="udsolgt">Udsolgt</span>
                 <span class="discount">20%</span>
                 <div class="image">
@@ -68,8 +68,8 @@ import Filters from "../components/filters.astro";
                   <p>Tiki upcycled shirt</p>
                   <p>649,00 DKK</p>
                 </div>
-              </div>
-              <div class="card">
+              </a>
+              <a href="/list" class="card">
                 <span class="udsolgt">Udsolgt</span>
                 <span class="discount">20%</span>
                 <div class="image">
@@ -88,8 +88,8 @@ import Filters from "../components/filters.astro";
                   <p>Tiki upcycled shirt</p>
                   <p>649,00 DKK</p>
                 </div>
-              </div>
-              <div class="card">
+              </a>
+              <a href="/list" class="card">
                 <span class="udsolgt">Udsolgt</span>
                 <span class="discount">20%</span>
                 <div class="image">
@@ -108,8 +108,8 @@ import Filters from "../components/filters.astro";
                   <p>Tiki upcycled shirt</p>
                   <p>649,00 DKK</p>
                 </div>
-              </div>
-              <div class="card">
+              </a>
+              <a href="/list" class="card">
                 <span class="udsolgt">Udsolgt</span>
                 <span class="discount">20%</span>
                 <div class="image">
@@ -128,8 +128,8 @@ import Filters from "../components/filters.astro";
                   <p>Tiki upcycled shirt</p>
                   <p>649,00 DKK</p>
                 </div>
-              </div>
-              <div class="card">
+              </a>
+              <a href="/list" class="card">
                 <span class="udsolgt">Udsolgt</span>
                 <span class="discount">20%</span>
                 <div class="image">
@@ -148,7 +148,7 @@ import Filters from "../components/filters.astro";
                   <p>Tiki upcycled shirt</p>
                   <p>649,00 DKK</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@ import Filters from "../components/filters.astro";
     h2 {
       font-size: 2em;
     }
-    a {
+    a:not(.card) {
       color: var(--links-color);
     }
     html {
@@ -224,6 +224,7 @@ import Filters from "../components/filters.astro";
       margin: 0 0 0 30px;
     }
     .card {
+      text-decoration: none;
       position: relative;
       /* max-width: 300px; */
       border: 1px solid black;
@@ -253,6 +254,7 @@ import Filters from "../components/filters.astro";
         justify-content: space-between;
         width: 95%;
         justify-self: center;
+        color: black;
         > :nth-child(1) {
           font-weight: 800;
           font-size: 1.4em;
