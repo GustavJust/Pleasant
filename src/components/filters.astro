@@ -2,286 +2,313 @@
 
 ---
 
-<div>
+<div class="filters_types">
   <div class="search">
     <button class="search_button">&#9906;</button>
-    <input type="text" placeholder="Hvad søger du?"/>
+    <input type="text" placeholder="Hvad søger du?" />
   </div>
   <div>
     <h3>Filters</h3>
     <fieldset class="filter-group price-filter">
-        <legend class="pris">Pris</legend>
-      
-        <label for="priceRange">
-          <span>Max pris:</span>
-          <span><span id="priceValue">500</span> DKK</span>
-        </label>
-      
-        <input
-          type="range"
-          id="priceRange"
-          name="price"
-          min="0"
-          max="3000"
-          value="500"
-          step="50"
-          oninput="priceValue.innerText = this.value"
-        />
-      </fieldset>
+      <legend class="pris">Pris</legend>
+
+      <label for="priceRange">
+        <span>Max pris:</span>
+        <span><span id="priceValue">500</span> DKK</span>
+      </label>
+
+      <input
+        type="range"
+        id="priceRange"
+        name="price"
+        min="0"
+        max="3000"
+        value="500"
+        step="50"
+        oninput="priceValue.innerText = this.value"
+      />
+    </fieldset>
     <section class="filters">
+      <details class="filter-dropdown" open>
+        <summary>Type</summary>
+        <fieldset class="filter-group">
+          <label class="filter-option">
+            <input type="checkbox" name="type" value="Jakker" />
+            Jakker
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="type" value="Sweatshirts" />
+            Sweatshirts
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="type" value="Skjorter" />
+            Skjorter
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="type" value="T-shirts" />
+            T-shirts
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="type" value="Shorts" />
+            Shorts
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="type" value="Børnetøj" />
+            Børnetøj
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="type" value="Sæt" />
+            Sæt
+          </label>
+        </fieldset>
+      </details>
 
-        <!-- Type Filter -->
-        <details class="filter-dropdown" open>
-          <summary>Type</summary>
-          <fieldset class="filter-group">
-            <label class="filter-option">
-              <input type="checkbox" name="type" value="Jakker" />
-              Jakker
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="type" value="Sweatshirts" />
-              Sweatshirts
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="type" value="Skjorter" />
-              Skjorter
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="type" value="T-shirts" />
-              T-shirts
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="type" value="Shorts" />
-              Shorts
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="type" value="Børnetøj" />
-              Børnetøj
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="type" value="Sæt" />
-              Sæt
-            </label>
-          </fieldset>
-        </details>
-      
-        <!-- Størrelse Filter -->
-        <details class="filter-dropdown">
-          <summary>Størrelse</summary>
-          <fieldset class="filter-group">
-            <label class="filter-option">
-              <input type="checkbox" name="size" value="XS" />
-              XS
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="size" value="S" />
-              S
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="size" value="M" />
-              M
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="size" value="L" />
-              L
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="size" value="XL" />
-              XL
-            </label>
-          </fieldset>
-        </details>
-      
-        <!-- Mønster Filter -->
-        <details class="filter-dropdown">
-          <summary>Mønster</summary>
-          <fieldset class="filter-group">
-            <label class="filter-option">
-              <input type="checkbox" name="pattern" value="Ensfarvet" />
-              Ensfarvet
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="pattern" value="Strik" />
-              Strik
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="pattern" value="Print" />
-              Print
-            </label>
-          </fieldset>
-        </details>
-      
-        <!-- Farve Filter -->
-        <details class="filter-dropdown">
-          <summary>Farve</summary>
-          <fieldset class="filter-group">
-            <label class="filter-option">
-              <input type="checkbox" name="color" value="Beige" />
-              Beige <div class="color_box beige"></div>
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="color" value="Sort" />
-              Sort <div class="color_box sort"></div>
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="color" value="Blå" />
-              Blå <div class="color_box bla"></div>
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="color" value="Bronze" />
-              Bronze <div class="color_box bronze"></div>
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="color" value="Brun" />
-              Brun <div class="color_box brun"></div>
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="color" value="Grå" />
-              Grå <div class="color_box gra"></div>
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="color" value="Grøn" />
-              Grøn <div class="color_box gron"></div>
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="color" value="Lilla" />
-              Lilla <div class="color_box lilla"></div>
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="color" value="Multifarvet" />
-              Multi-farvet <div class="color_box multifarvet"></div>
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="color" value="Navy" />
-              Navy <div class="color_box navy"></div>
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="color" value="Orange" />
-              Orange <div class="color_box orange"></div>
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="color" value="Pink" />
-              Pink <div class="color_box pink"></div>
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="color" value="Rød" />
-              Rød <div class="color_box rod"></div>
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="color" value="Rosa" />
-              Rosa <div class="color_box rosa"></div>
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="color" value="Hvid" />
-              Hvid <div class="color_box hvid"></div>
-            </label>
-            <label class="filter-option">
-              <input type="checkbox" name="color" value="Gul" />
-              Gul <div class="color_box gul"></div>
-            </label>
-          </fieldset>
-        </details>
-      
-      </section>
-      
-</div>
+      <details class="filter-dropdown">
+        <summary>Størrelse</summary>
+        <fieldset class="filter-group">
+          <label class="filter-option">
+            <input type="checkbox" name="size" value="XS" />
+            XS
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="size" value="S" />
+            S
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="size" value="M" />
+            M
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="size" value="L" />
+            L
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="size" value="XL" />
+            XL
+          </label>
+        </fieldset>
+      </details>
 
-<style>
-  .search {
-    width: 0%;
-    display: flex;
+      <details class="filter-dropdown">
+        <summary>Mønster</summary>
+        <fieldset class="filter-group">
+          <label class="filter-option">
+            <input type="checkbox" name="pattern" value="Ensfarvet" />
+            Ensfarvet
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="pattern" value="Strik" />
+            Strik
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="pattern" value="Print" />
+            Print
+          </label>
+        </fieldset>
+      </details>
 
-    > .search_button {
-      background-color: transparent;
-      border: none;
-      font-size: 2em;
-      transform: rotate(45deg);
-      margin: 0 0 0 30px;
-      padding: 0;
-      justify-content: center;
-      align-items: center;
-      margin-right: 0.6em;
+      <details class="filter-dropdown">
+        <summary>Farve</summary>
+        <fieldset class="filter-group">
+          <label class="filter-option">
+            <input type="checkbox" name="color" value="Beige" />
+            Beige <div class="color_box beige"></div>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="color" value="Sort" />
+            Sort <div class="color_box sort"></div>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="color" value="Blå" />
+            Blå <div class="color_box bla"></div>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="color" value="Bronze" />
+            Bronze <div class="color_box bronze"></div>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="color" value="Brun" />
+            Brun <div class="color_box brun"></div>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="color" value="Grå" />
+            Grå <div class="color_box gra"></div>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="color" value="Grøn" />
+            Grøn <div class="color_box gron"></div>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="color" value="Lilla" />
+            Lilla <div class="color_box lilla"></div>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="color" value="Multifarvet" />
+            Multi-farvet <div class="color_box multifarvet"></div>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="color" value="Navy" />
+            Navy <div class="color_box navy"></div>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="color" value="Orange" />
+            Orange <div class="color_box orange"></div>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="color" value="Pink" />
+            Pink <div class="color_box pink"></div>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="color" value="Rød" />
+            Rød <div class="color_box rod"></div>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="color" value="Rosa" />
+            Rosa <div class="color_box rosa"></div>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="color" value="Hvid" />
+            Hvid <div class="color_box hvid"></div>
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" name="color" value="Gul" />
+            Gul <div class="color_box gul"></div>
+          </label>
+        </fieldset>
+      </details>
+    </section>
+  </div>
+
+  <style>
+    .filters_types {
+      margin-top: 80px;
     }
-    > .search_button:hover {
+    .search {
+      width: 0%;
+      display: flex;
+      margin-bottom: 60px;
+
+      > .search_button {
+        background-color: transparent;
+        border: none;
+        font-size: 2em;
+        transform: rotate(45deg);
+        /* margin: 0 0 0 30px; */
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0.6em;
+      }
+      > .search_button:hover {
+        cursor: pointer;
+      }
+      > input {
+        font-family: "Courier New", Courier, monospace;
+        background-color: none;
+        border: none;
+        border-bottom: 2px solid black;
+        background: transparent;
+        padding: 0.5em 0;
+        outline: none;
+        font-size: 16px;
+      }
+    }
+
+    .filter-group {
+      border: none;
+      padding: 1em 0;
+      font-family: var(--primary-font);
+    }
+
+    .filter-group legend {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+
+    .filter-option {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      margin-bottom: 0.5em;
       cursor: pointer;
     }
-    > input {
-        font-family: 'Courier New', Courier, monospace;
-      background-color: none;
-  border: none;
-  border-bottom: 2px solid black;
-  background: transparent;
-  padding: 0.5em 0;
-  outline: none;
-  font-size: 16px;
-}
+
+    .filter-option input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #4a997c; /* Optional: Pleasant green accent */
     }
-  }
 
-  .filter-group {
-  border: none;
-  padding: 1em 0;
-  font-family: var(--primary-font);
-}
-
-.filter-group legend {
-  font-weight: bold;
-  margin-bottom: 0.5em;
-}
-
-.filter-option {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  margin-bottom: 0.5em;
-  cursor: pointer;
-}
-
-.filter-option input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: #4a997c; /* Optional: Pleasant green accent */
-}
-
-.color_box{
-    width: 20px ;
-    height: 20px;
-    background-color: black;
-    border-radius: 999px;
-}
-input div.color_box:nth-of-type(1){
-    background-color: beige;
-}
-.color_box.beige { background-color: #f5f5dc; }
-.color_box.sort { background-color: #000000; }
-.color_box.bla { background-color: #0000ff; }
-.color_box.bronze { background-color: #cd7f32; }
-.color_box.brun { background-color: #8b4513; }
-.color_box.gra { background-color: #808080; }
-.color_box.gron { background-color: #228b22; }
-.color_box.lilla { background-color: #800080; }
-.color_box.multifarvet {
-  background: repeating-linear-gradient(
-    45deg,
-    red,
-    orange 10px,
-    yellow 20px,
-    green 30px,
-    blue 40px,
-    purple 50px
-  );
-}
-.color_box.navy { background-color: #000080; }
-.color_box.orange { background-color: orange; }
-.color_box.pink { background-color: pink; }
-.color_box.rod { background-color: red; }
-.color_box.rosa { background-color: #ffc0cb; }
-.color_box.hvid {
-  background-color: white;
-  border: 1px solid #ccc; /* Makes white box visible */
-}
-.color_box.gul { background-color: yellow; }
-fieldset:has(.pris), h3, details{
-    margin-left: 30px;
-}
-</style>
+    .color_box {
+      width: 20px;
+      height: 20px;
+      background-color: black;
+      border-radius: 999px;
+    }
+    input div.color_box:nth-of-type(1) {
+      background-color: beige;
+    }
+    .color_box.beige {
+      background-color: #f5f5dc;
+    }
+    .color_box.sort {
+      background-color: #000000;
+    }
+    .color_box.bla {
+      background-color: #0000ff;
+    }
+    .color_box.bronze {
+      background-color: #cd7f32;
+    }
+    .color_box.brun {
+      background-color: #8b4513;
+    }
+    .color_box.gra {
+      background-color: #808080;
+    }
+    .color_box.gron {
+      background-color: #228b22;
+    }
+    .color_box.lilla {
+      background-color: #800080;
+    }
+    .color_box.multifarvet {
+      background: repeating-linear-gradient(
+        45deg,
+        red,
+        orange 10px,
+        yellow 20px,
+        green 30px,
+        blue 40px,
+        purple 50px
+      );
+    }
+    .color_box.navy {
+      background-color: #000080;
+    }
+    .color_box.orange {
+      background-color: orange;
+    }
+    .color_box.pink {
+      background-color: pink;
+    }
+    .color_box.rod {
+      background-color: red;
+    }
+    .color_box.rosa {
+      background-color: #ffc0cb;
+    }
+    .color_box.hvid {
+      background-color: white;
+      border: 1px solid #ccc; /* Makes white box visible */
+    }
+    .color_box.gul {
+      background-color: yellow;
+    }
+    fieldset:has(.pris),
+    h3,
+    details {
+      /* margin-left: 30px; */
+    }
+  </style>
+</div>
