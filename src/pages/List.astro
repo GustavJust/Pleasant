@@ -1,6 +1,7 @@
 ---
 import Header from "../components/header.astro";
 import Footer from "../components/footer.astro";
+import Filters from "../components/filters.astro";
 ---
 
 <!doctype html>
@@ -8,13 +9,46 @@ import Footer from "../components/footer.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>List view</title>
   </head>
   <body>
     <header>
       <Header />
     </header>
-    <main></main>
+    <main>
+      <section class="hero">
+        <div class="splash">
+          <img src="/assets/imgs/pleasant_hero.svg" alt="hero img" />
+        </div>
+      </section>
+      <section class="filters">
+        <div class="flex space-between">
+          <div>
+            <a href="/">Hjem</a> > <a href="/#categories">Kategorier</a> > <a
+              href="/list"
+            >
+              Tøj</a
+            >
+          </div>
+          <div>
+            <p>
+              <label for="category">Sorter:</label>
+              <select name="category" id="category">
+                <option value="clothes">Højeste pris</option>
+                <option value="clothes">Laveste pris</option>
+                <option value="accessories">Rabat</option>
+                <option value="lifestyle">Nyeste</option>
+              </select>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="shop_module">
+          <Filters />
+        </div>
+      </section>
+    </main>
     <footer>
       <footer>
         <Footer />
@@ -22,3 +56,59 @@ import Footer from "../components/footer.astro";
     </footer>
   </body>
 </html>
+
+<style>
+  a {
+    color: var(--links-color);
+  }
+  html {
+    --primary-font: "Courier New", Courier, monospace;
+    --secondary-font: "Courier New", Courier, regular;
+
+    --main-margin: 300px;
+    --section-spacing: 70px;
+    --text-spacing: 1em;
+
+    --primary-color: #4a997c;
+    --secondary-color: white;
+    --links-color: #551a8b;
+  }
+  :root {
+    font-family: var(--primary-font);
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  body {
+    background-image: url(/assets/imgs/wallpaper_logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+  }
+  .splash {
+    /* padding-top: 40px; */
+    width: 100vw;
+    overflow: hidden;
+    transform: translateY(37px);
+  }
+  section {
+    > div img {
+      width: 100%;
+    }
+  }
+  .flex.space-between {
+    justify-self: center;
+    margin-top: 50px;
+    width: 92%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .shop_module {
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 1fr 4.5fr;
+    border: 1px solid blue;
+    width: 92%;
+  }
+</style>

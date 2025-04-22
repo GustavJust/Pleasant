@@ -62,18 +62,18 @@ import Footer from "../components/footer.astro";
         <p>Make life pleasant</p>
         <p>Make life pleasant</p>
       </div>
-      <section class="categories">
+      <section class="categories" id="categories">
         <div class="menu">
           <div class="menu_row one">
             <div class="menu_item_container one">
-              <a href="">
+              <a href="/list">
                 <img src="/assets/imgs/high_res/clothes.webp" alt="clothes" />
                 <h2 class="shadow">TØJ</h2>
                 <h2>TØJ</h2>
               </a>
             </div>
             <div class="menu_item_container two">
-              <a href="">
+              <a href="/list">
                 <img
                   src="/assets/imgs/high_res/accessories.webp"
                   alt="Accessories"
@@ -85,7 +85,7 @@ import Footer from "../components/footer.astro";
           </div>
           <div class="menu_row two">
             <div class="menu_item_container three">
-              <a href="">
+              <a href="/list">
                 <img
                   src="/assets/imgs/high_res/lifestyle.webp"
                   alt="lifestyle"
@@ -95,7 +95,7 @@ import Footer from "../components/footer.astro";
               </a>
             </div>
             <div class="menu_item_container four">
-              <a href="">
+              <a href="/list">
                 <img
                   src="/assets/imgs/high_res/shop_the_drop.webp"
                   alt="Shop the drop"
@@ -274,13 +274,13 @@ import Footer from "../components/footer.astro";
     }
   }
   .spinning-logo {
-    width: 300px;
+    width: 600px;
     position: absolute;
     animation: spinY 4s linear infinite;
     transform-style: preserve-3d;
     display: inline-block;
     transform-origin: center center;
-    top: 40%;
+    top: 20%;
     filter: invert(1);
   }
   .collage-container img:nth-child(1) {
