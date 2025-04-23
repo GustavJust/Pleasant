@@ -1,0 +1,396 @@
+---
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List view</title>
+  </head>
+  <body>
+    <header>
+      <Header />
+    </header>
+
+    <main>
+      <div class="bread_crumbs">
+        <a href="/">Hjem</a> > <a href="/#categories">Kategorier</a>
+        >
+        <a href="/list">Tøj</a>
+        >
+        <a href="">Tikiskjorte</a>
+      </div>
+      <div class="product_container">
+        <input type="radio" name="preview" id="preview-1" checked hidden />
+        <input type="radio" name="preview" id="preview-2" hidden />
+        <input type="radio" name="preview" id="preview-3" hidden />
+
+        <div class="images">
+          <label for="preview-1">
+            <img
+              src="/assets/imgs/produkter/tiki_upcycled_folded.webp"
+              alt=""
+            />
+          </label>
+          <label for="preview-2">
+            <img
+              src="/assets/imgs/produkter/tiki_upcycled_unfolded.webp"
+              alt=""
+            />
+          </label>
+          <label for="preview-3">
+            <img
+              src="/assets/imgs/produkter/tiki_upcycled_closeup.webp"
+              alt=""
+            />
+          </label>
+        </div>
+
+        <div class="product_preview">
+          <img
+            src="/assets/imgs/produkter/tiki_upcycled_folded.webp"
+            alt=""
+            class="preview one"
+          />
+          <img
+            src="/assets/imgs/produkter/tiki_upcycled_unfolded.webp"
+            alt=""
+            class="preview two"
+          />
+          <img
+            src="/assets/imgs/produkter/tiki_upcycled_closeup.webp"
+            alt=""
+            class="preview three"
+          />
+        </div>
+        <div class="product_desc">
+          <h2>Tiki Shirt</h2>
+          <h3>599,00 DDk</h3>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit
+            obcaecati quaerat nisi amet iste, assumenda corrupti magni,
+            perspiciatis corporis accusamus quas ipsum voluptates sed provident
+            omnis? Sunt consequuntur tempora similique?
+          </p>
+          <div class="size-buttons">
+            <button class="size-toggle">XS</button>
+            <button class="size-toggle">S</button>
+            <button class="size-toggle">M</button>
+            <button class="size-toggle">L</button>
+            <button class="size-toggle">XL</button>
+          </div>
+          <a href="" class="desc_container">
+            <img src="/assets/imgs/ruler_icon.svg" alt="" />Size guide
+          </a>
+          <div class="add_to_basket">
+            <button class="buy">Læg i kurv</button>
+
+            <!-- Hidden checkbox toggle -->
+            <input
+              type="checkbox"
+              id="like-toggle"
+              class="like-toggle"
+              hidden
+            />
+
+            <!-- Label acts like the like button -->
+            <label for="like-toggle" class="like">
+              <img
+                src="/assets/imgs/heart_unchecked.svg"
+                alt=""
+                class="no_like"
+              />
+              <img src="/assets/imgs/heart_checked.svg" alt="" class="liked" />
+            </label>
+          </div>
+          <div class="delivery desc_container">
+            <img src="/assets/imgs/truck.svg" alt="" /><p>1-3 dags levering</p>
+          </div>
+          <div class="pickup desc_container">
+            <img src="/assets/imgs/shopping_bag.svg" alt="" /><p>
+              1-3 dags levering
+            </p>
+          </div>
+          <div class="free_shipping desc_container">
+            <img src="/assets/imgs/heart_unchecked.svg" alt="" /><p>
+              Gratis fragt på ordrer over 399 kr & fri retur.
+            </p>
+          </div>
+          <div class="donation desc_container">
+            <img src="/assets/imgs/donate_icon.svg" alt="" />
+            <div class="donation_text">
+              <strong>Vi donerer 1% af dit køb</strong>
+              <p>Du bestemmer hvor når du gennemfører dit køb</p>
+            </div>
+          </div>
+          <a href="" class="desc_container">
+            <img src="/assets/imgs/question_icon.svg" alt="" />Spørgsmål til
+            produktet?
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <footer>
+        <Footer />
+      </footer>
+    </footer>
+  </body>
+  <script is:inline>
+    document.querySelectorAll(".size-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        document
+          .querySelectorAll(".size-toggle")
+          .forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+      });
+    });
+  </script>
+</html>
+
+<style>
+  h2 {
+    font-size: 2em;
+  }
+  a:not(.card) {
+    color: var(--links-color);
+  }
+  html {
+    --primary-font: "Courier New", Courier, monospace;
+    --secondary-font: "Courier New", Courier, regular;
+
+    --main-margin: 300px;
+    --section-spacing: 70px;
+    --text-spacing: 1em;
+
+    --primary-color: #4a997c;
+    --secondary-color: white;
+    --links-color: #551a8b;
+    --discount-color: rgb(238, 143, 126);
+    --out-of-stock-color: rgb(0, 0, 0);
+  }
+  :root {
+    font-family: var(--primary-font);
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  body {
+    background-image: url(/assets/imgs/wallpaper_logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+  }
+  .hidden {
+    display: none;
+  }
+  .selected {
+    border: 1px solid black !important;
+  }
+  .bread_crumbs {
+    padding-top: 100px;
+    margin-left: 50px;
+  }
+
+  .size-toggle {
+    font-family: "Courier New", Courier, monospace;
+    padding: 0.5em 1.2em;
+    border: 1px solid #000;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+  }
+
+  .size-toggle:hover {
+    background-color: rgb(221, 221, 221);
+  }
+
+  .size-toggle.active {
+    background-color: black;
+    color: white;
+    border-color: black;
+  }
+
+  .product_container {
+    margin-top: 30px;
+    width: 80%;
+    height: fit-content;
+    justify-self: center;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr 5fr 3fr;
+
+    > .images button {
+      border: none;
+      background-color: transparent;
+      height: 200px;
+      width: fit-content;
+      padding: 0;
+    }
+    > .images button img {
+      width: auto;
+      height: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+    > .product_preview {
+      display: grid;
+      grid-template-columns: 1fr;
+      position: relative;
+      height: 800px;
+      padding: 1px;
+    }
+    > .product_preview img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      grid-area: 1/1/2/2;
+      position: absolute;
+    }
+    > .product_desc {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    > .product_desc h2,
+    .product_desc h3 {
+      margin: 0;
+    }
+    > .product_desc h2 {
+      font-size: 3em;
+    }
+    > .product_desc .desc_container {
+      display: flex;
+      gap: 1em;
+      align-items: center;
+    }
+    > .product_desc p {
+      margin: 0;
+      padding: 0;
+    }
+    > .product_desc .desc_container p {
+      margin: 0;
+      padding: 0;
+    }
+    > .product_desc .desc_container img {
+      width: 25px;
+    }
+    > .product_desc .donation.desc_container {
+      border: 1px solid black;
+      padding: 0.5em;
+    }
+    > .product_desc .donation.desc_container .donation_text strong,
+    .product_desc .donation.desc_container .donation_text p {
+      margin: 0;
+      padding: 0;
+    }
+    > .product_desc .add_to_basket {
+      display: flex;
+      width: 100%;
+    }
+    > .product_desc .add_to_basket .buy {
+      font-family: var(--primary-font);
+      font-size: 1.4em;
+      border-radius: none;
+      border: 1px solid black;
+      background-color: var(--primary-color);
+      flex-grow: 2;
+    }
+    > .product_desc .add_to_basket .buy:hover {
+      background-color: black;
+      color: white;
+    }
+    > .product_desc .add_to_basket .like {
+      background-color: white;
+      border: 1px solid black;
+      transform: translateX(-1px);
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    > .product_desc .add_to_basket .like img {
+      grid-area: 1/1/2/2;
+      width: 30px;
+      padding: 5px;
+    }
+    > .product_desc a {
+      color: black;
+    }
+    > .product_desc a:hover {
+      color: blue;
+    }
+  }
+  .like {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+  }
+
+  .liked {
+    display: none;
+  }
+
+  .like-toggle:checked + .like .no_like {
+    display: none;
+  }
+
+  .like-toggle:checked + .like .liked {
+    display: inline-block;
+  }
+  .images {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .images label {
+    cursor: pointer;
+    height: 150px;
+    display: block;
+  }
+
+  .images label img {
+    height: 100%;
+    width: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border: 2px solid transparent;
+    transition: border 0.2s ease;
+  }
+
+  #preview-1:checked ~ .images label[for="preview-1"] img,
+  #preview-2:checked ~ .images label[for="preview-2"] img,
+  #preview-3:checked ~ .images label[for="preview-3"] img {
+    border-color: black;
+  }
+
+  .product_preview {
+    position: relative;
+    height: 800px;
+    width: 100%;
+  }
+
+  .product_preview .preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  #preview-1:checked ~ .product_preview .one,
+  #preview-2:checked ~ .product_preview .two,
+  #preview-3:checked ~ .product_preview .three {
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+  }
+</style>
