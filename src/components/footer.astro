@@ -54,10 +54,7 @@
       </div>
     </div>
   </div>
-  <p>
-    Pleasant er et tøjmærke, der upcycler og laver nyt tøj af brugt tekstil. God
-    stil. God samvittighed.
-  </p>
+  <p>Pleasant er et tøjmærke, der upcycler og laver nyt tøj af brugt tekstil. God stil. God samvittighed.</p>
   <img src="/assets/imgs/logo_black.svg" alt="logo" class="footer_logo" />
   <p class="copyright">Copyright © 2025, Pleasant.</p>
 </div>
@@ -75,12 +72,7 @@
 
     background-color: #35916f;
     opacity: 0.8;
-    background-image: repeating-radial-gradient(
-        circle at 0 0,
-        transparent 0,
-        #35916f 10px
-      ),
-      repeating-linear-gradient(#4a997c55, #4a997c);
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #35916f 10px), repeating-linear-gradient(#4a997c55, #4a997c);
 
     padding-bottom: 1em;
     margin-top: var(--section-spacing);
@@ -163,5 +155,25 @@
     font-size: 0.7em;
     justify-self: right;
     margin: 0 !important;
+  }
+
+  .newsletter {
+    max-width: 400px; /* or whatever fits your design */
+    width: 100%;
+  }
+
+  .newsletter_input {
+    width: 100%;
+    box-sizing: border-box; /* important to include padding in width */
+  }
+
+  @media (max-width: 768px) {
+    .info {
+      flex-direction: column;
+    }
+
+    .footer-container p {
+      max-width: 350px;
+    }
   }
 </style>
