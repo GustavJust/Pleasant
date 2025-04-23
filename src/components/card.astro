@@ -1,0 +1,40 @@
+---
+import { supabase } from "../lib/supabaseClient.js";
+
+const { data: products, error } = await supabase.from("products").select("*");
+
+if (error) throw new Error(error.message);
+---
+
+{
+  products.map((product) => (
+    <a href={`/produkt/${product.slug || "single"}`} class="card">
+      {product.is_sold_out && <span class="udsolgt">Udsolgt</span>}
+      {product.discount > 0 && (
+        <span class="discount">{product.discount}%</span>
+      )}
+
+      <div class="image">
+        <img
+          src={product.image_urls?.[0]}
+          alt={product.name}
+          class="main"
+          loading="lazy"
+        />
+        {product.image_urls?.[1] && (
+          <img
+            src={product.image_urls[1]}
+            alt={`${product.name} alternativ`}
+            class="alternative"
+            loading="lazy"
+          />
+        )}
+      </div>
+
+      <div class="desc">
+        <p>{product.name}</p>
+        <p>{product.price} DKK</p>
+      </div>
+    </a>
+  ))
+}
