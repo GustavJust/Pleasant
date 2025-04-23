@@ -62,11 +62,7 @@ import Filters from "../components/filters.astro";
       <section class="filters">
         <div class="flex space-between">
           <div>
-            <a href="/">Hjem</a> > <a href="/#categories">Kategorier</a> > <a
-              href="/list"
-            >
-              Tøj</a
-            >
+            <a href="/">Hjem</a> > <a href="/#categories">Kategorier</a> > <a href="/list"> Tøj</a>
           </div>
           <div>
             <p>
@@ -91,16 +87,8 @@ import Filters from "../components/filters.astro";
                 <span class="udsolgt">Udsolgt</span>
                 <span class="discount">20%</span>
                 <div class="image">
-                  <img
-                    src="/assets/imgs/produkter/tiki_upcycled_folded.webp"
-                    alt="tiki"
-                    class="main"
-                  />
-                  <img
-                    src="/assets/imgs/produkter/tiki_upcycled_unfolded.webp"
-                    alt="tiki"
-                    class="alternative"
-                  />
+                  <img src="/assets/imgs/produkter/tiki_upcycled_folded.webp" alt="tiki" class="main" />
+                  <img src="/assets/imgs/produkter/tiki_upcycled_unfolded.webp" alt="tiki" class="alternative" />
                 </div>
                 <div class="desc">
                   <p>Tiki upcycled shirt</p>
@@ -111,16 +99,8 @@ import Filters from "../components/filters.astro";
                 <span class="udsolgt">Udsolgt</span>
                 <span class="discount">20%</span>
                 <div class="image">
-                  <img
-                    src="/assets/imgs/produkter/tiki_upcycled_folded.webp"
-                    alt="tiki"
-                    class="main"
-                  />
-                  <img
-                    src="/assets/imgs/produkter/tiki_upcycled_unfolded.webp"
-                    alt="tiki"
-                    class="alternative"
-                  />
+                  <img src="/assets/imgs/produkter/tiki_upcycled_folded.webp" alt="tiki" class="main" />
+                  <img src="/assets/imgs/produkter/tiki_upcycled_unfolded.webp" alt="tiki" class="alternative" />
                 </div>
                 <div class="desc">
                   <p>Tiki upcycled shirt</p>
@@ -131,16 +111,8 @@ import Filters from "../components/filters.astro";
                 <span class="udsolgt">Udsolgt</span>
                 <span class="discount">20%</span>
                 <div class="image">
-                  <img
-                    src="/assets/imgs/produkter/tiki_upcycled_folded.webp"
-                    alt="tiki"
-                    class="main"
-                  />
-                  <img
-                    src="/assets/imgs/produkter/tiki_upcycled_unfolded.webp"
-                    alt="tiki"
-                    class="alternative"
-                  />
+                  <img src="/assets/imgs/produkter/tiki_upcycled_folded.webp" alt="tiki" class="main" />
+                  <img src="/assets/imgs/produkter/tiki_upcycled_unfolded.webp" alt="tiki" class="alternative" />
                 </div>
                 <div class="desc">
                   <p>Tiki upcycled shirt</p>
@@ -151,16 +123,8 @@ import Filters from "../components/filters.astro";
                 <span class="udsolgt">Udsolgt</span>
                 <span class="discount">20%</span>
                 <div class="image">
-                  <img
-                    src="/assets/imgs/produkter/tiki_upcycled_folded.webp"
-                    alt="tiki"
-                    class="main"
-                  />
-                  <img
-                    src="/assets/imgs/produkter/tiki_upcycled_unfolded.webp"
-                    alt="tiki"
-                    class="alternative"
-                  />
+                  <img src="/assets/imgs/produkter/tiki_upcycled_folded.webp" alt="tiki" class="main" />
+                  <img src="/assets/imgs/produkter/tiki_upcycled_unfolded.webp" alt="tiki" class="alternative" />
                 </div>
                 <div class="desc">
                   <p>Tiki upcycled shirt</p>
@@ -171,16 +135,8 @@ import Filters from "../components/filters.astro";
                 <span class="udsolgt">Udsolgt</span>
                 <span class="discount">20%</span>
                 <div class="image">
-                  <img
-                    src="/assets/imgs/produkter/tiki_upcycled_folded.webp"
-                    alt="tiki"
-                    class="main"
-                  />
-                  <img
-                    src="/assets/imgs/produkter/tiki_upcycled_unfolded.webp"
-                    alt="tiki"
-                    class="alternative"
-                  />
+                  <img src="/assets/imgs/produkter/tiki_upcycled_folded.webp" alt="tiki" class="main" />
+                  <img src="/assets/imgs/produkter/tiki_upcycled_unfolded.webp" alt="tiki" class="alternative" />
                 </div>
                 <div class="desc">
                   <p>Tiki upcycled shirt</p>
@@ -406,6 +362,33 @@ import Filters from "../components/filters.astro";
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 5px; /* Optional: spacing between cards */
+    }
+
+    @media (max-width: 768px) {
+      .shop_module {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .mobile_filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-bottom: 1em;
+      }
+
+      .shop_grid_container {
+        margin-left: 0; /* remove the 30px margin from desktop */
+      }
+
+      .filters_types {
+        margin-top: 0;
+      }
+
+      .flex.space-between {
+        flex-direction: column;
+      }
     }
   </style>
 </html>

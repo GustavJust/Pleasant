@@ -17,19 +17,10 @@
         <span><span id="priceValue">500</span> DKK</span>
       </label>
 
-      <input
-        type="range"
-        id="priceRange"
-        name="price"
-        min="0"
-        max="3000"
-        value="500"
-        step="50"
-        oninput="priceValue.innerText = this.value"
-      />
+      <input type="range" id="priceRange" name="price" min="0" max="3000" value="500" step="50" oninput="priceValue.innerText = this.value" />
     </fieldset>
     <section class="filters">
-      <details class="filter-dropdown" open>
+      <details class="filter-dropdown">
         <summary>Type</summary>
         <fieldset class="filter-group">
           <label class="filter-option">
@@ -273,15 +264,7 @@
       background-color: #800080;
     }
     .color_box.multifarvet {
-      background: repeating-linear-gradient(
-        45deg,
-        red,
-        orange 10px,
-        yellow 20px,
-        green 30px,
-        blue 40px,
-        purple 50px
-      );
+      background: repeating-linear-gradient(45deg, red, orange 10px, yellow 20px, green 30px, blue 40px, purple 50px);
     }
     .color_box.navy {
       background-color: #000080;
@@ -309,6 +292,12 @@
     h3,
     details {
       /* margin-left: 30px; */
+    }
+
+    @media (max-width: 768px) {
+      .filters_types {
+        margin-top: 0;
+      }
     }
   </style>
 </div>
